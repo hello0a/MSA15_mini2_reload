@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- css 코드 불러오기 -->
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/review-detail.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/mypage_user/css/review-detail.css">
     <title>마이페이지_회원용_후기변경</title>
 </head>
 <body>
@@ -16,17 +16,17 @@
     <main>
     	<div class="inner">
             <section class="left">
-                <jsp:include page="/jsp/main.jsp"/>
+                <jsp:include page="/mypage_user/main.jsp"/>
             </section>
             <section class="right">
             	<div class="container">
                     <div class="img-wrap">
-                        <img src="${pageContext.request.contextPath}/img/장원영.jpeg" alt="후기 사진">
-                        <img src="${pageContext.request.contextPath}/img/장원영.jpeg" alt="후기 사진">
-                        <img src="${pageContext.request.contextPath}/img/장원영.jpeg" alt="후기 사진">
+                        <img src="${pageContext.request.contextPath}/mypage_user/img/장원영.jpeg" alt="후기 사진">
+                        <img src="${pageContext.request.contextPath}/mypage_user/img/장원영.jpeg" alt="후기 사진">
+                        <img src="${pageContext.request.contextPath}/mypage_user/img/장원영.jpeg" alt="후기 사진">
                     </div>
                     <div class="reserve-detail">
-                        <img src="${pageContext.request.contextPath}/img/1 (3).jpg" alt="프로필 사진">
+                        <img src="${pageContext.request.contextPath}/mypage_user/img/1 (3).jpg" alt="프로필 사진">
                         <p>디자이너 이름</p>
                         <p>예약 날짜</p>
                     </div>

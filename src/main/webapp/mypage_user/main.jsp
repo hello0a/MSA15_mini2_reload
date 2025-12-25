@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- css 코드 불러오기 -->
     <!-- side.jsp 만들어서 include 하기 (왼쪽 사이드) : 마이페이지왼쪽 정렬까지 기능 붙이기 -->
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/main.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/mypage_user/css/main.css">
     <title>마이페이지_회원용_메인</title>
 </head>
 
@@ -19,7 +19,7 @@
     <section class="mypage-main">
         
         <div class="user-profile">
-            <img src="${pageContext.request.contextPath}/img/profile.png" alt="회원 프로필 사진">
+            <img src="${pageContext.request.contextPath}/mypage_user/img/profile.png" alt="회원 프로필 사진">
             <p>이름</p>
         </div>
         <nav class="mypage-index">
