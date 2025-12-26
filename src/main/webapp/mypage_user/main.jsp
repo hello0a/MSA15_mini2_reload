@@ -24,7 +24,7 @@
 			<p>이름</p>
 		</div>
 		<nav class="mypage-index">
-			<a href="/mypage_user/info/info.html" class="user-info">회원 정보</a> <a
+			<a href="/user/mypage/info?id=${param.id }" class="user-info">회원 정보</a> <a
 				href="/mypage_user/reserve/reserve.html" class="user-reserve">예약
 				조회</a> <a href="/mypage_user/review/review.html" class="user-review">후기
 				관리</a> <a href="" class="user-board">CS 문의</a>

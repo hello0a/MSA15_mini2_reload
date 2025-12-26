@@ -1,0 +1,28 @@
+package reservation.servlet.userservlet;
+
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import reservation.dto.UserDTO;
+import reservation.service.UserService;
+import reservation.service.UserServiceImpl;
+
+import java.io.IOException;
+
+@WebServlet("/user/mypage")
+public class MyPage extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+   
+	private UserService userService = new UserServiceImpl();
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
+		// forward 방식 : 마이페이지 회원정보 페이지로 이동 (review.jsp)
+		String id = request.getParameter("id");
+		request.setAttribute("id", id);
+		request.getRequestDispatcher("/mypage_user/main.jsp").forward(request, response);
+	}
+	
+}

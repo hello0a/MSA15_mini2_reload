@@ -1,7 +1,7 @@
-package reservation.DTO;
+package reservation.dto;
 
+import java.sql.Date;
 import java.sql.Timestamp;
-import java.util.Date;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -15,14 +15,14 @@ import lombok.NoArgsConstructor;
 @Builder
 public class UserDTO {
 	private int no;
-	private String name;
+	private String id;
 	private String password;
 	private String email;
 	private String full_name;
 	private Date birth;
-	private boolean gender;
-	private boolean nationality;
-	private int phonenumber;
+	private String gender;
+	private String nationality;
+	private String phonenumber;
 	private Timestamp created_at;
 	private Timestamp updated_at;
 	

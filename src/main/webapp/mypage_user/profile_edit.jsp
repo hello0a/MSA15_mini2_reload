@@ -22,6 +22,8 @@
 				<jsp:include page="/mypage_user/main.jsp" />
 			</section>
 			<section class="right">
+				<form action="/user/profile" method="post">
+				<input type="hidden" id="id" name="id" value="${user.id }" />
 				<div class="info">
 					<div class="label-wrap">
 						<label class="id">아이디</label> 
@@ -35,19 +37,20 @@
 
 					<div class="p-wrap">
 						<p>${user.id }</p>
-						<p>${user.password }</p>
-						<p>${user.full_name }</p>
-						<p>${user.birth }</p>
-						<p>${user.email }</p>
-						<p>${user.phonenumber }</p>
-						<p>${user.gender }</p>
+						<p><input id="password" name="password" value="${user.password }" /></p>
+						<p><input id="name" name="name" value="${user.full_name }" /></p>
+						<p><input id="birth" name="birth" value="${user.birth }" /></p>
+						<p><input id="email" name="email" value="${user.email }" /></p>
+						<p><input id="phonenumber" name="phonenumber" value="${user.phonenumber }" /></p>
+						<p><input id="gender" name="gender" value="${user.gender }" /></p>
 <!-- 						<div class="button-wrap">
 							<button>남</button>
 							<button>여</button>
 						</div>
  -->					</div>
 				</div>
-				<a class="edit" href="/user/profile?id=${user.id}">회원정보 수정</a>
+				<button class="edit" type="submit">회원정보 저장</button>
+				</form>
 			</section>
 
 		</div>

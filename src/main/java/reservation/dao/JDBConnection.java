@@ -1,11 +1,10 @@
-package reservation.DAO;
+package reservation.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Statement;
-
+/* 참고용 : DB 연결은 DBUtil로 */
 public class JDBConnection {
 
 	public Connection con;	// 연결된 드라이버에 SQL 요청할 객체 생성
