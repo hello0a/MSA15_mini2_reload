@@ -1,0 +1,97 @@
+@charset "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+main {
+	min-height: 100vh;
+	width: 1060px;
+	max-width: 100%;
+	display: flex;
+	align-items: center;
+}
+
+.inner {
+	width: 970px;
+	max-width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0 45px;
+	gap: 100px;
+	/* min-height: 100vh; */
+}
+
+.left {
+	width: 315px;
+	max-width: 100%;
+}
+
+.right {
+	display: inline-flex;
+	width: 555px;
+	max-width: 100%;
+	justify-content: center;
+	gap: 3rem;
+	flex-direction: column;
+}
+
+.info {
+	display: inline-flex;
+	width: 100%;
+	gap: 1.5rem;
+}
+
+.label-wrap {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	flex: 1;
+}
+
+.label-wrap label {
+	background: gainsboro;
+	border-radius: 0.3rem;
+	text-align: center;
+	padding: 0.3rem;
+}
+
+.p-wrap {
+	flex: 2;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.p-wrap p {
+	padding: 0.25rem;
+	border: 1px solid gainsboro;
+	border-radius: 0.3rem;
+}
+
+.button-wrap {
+	display: flex;
+	padding: 0.5rem 0;
+	width: 100%;
+	gap: 0.5rem;
+	/* justify-content: space-around; */
+}
+
+.button-wrap button {
+	width: 50%;
+	height: 100%;
+}
+
+.edit {
+	margin: auto;
+	width: 120px;
+	height: 40px;
+	text-align: center;
+	align-content: center;
+	background: gainsboro;
+	border-radius: 0.3rem;
+}

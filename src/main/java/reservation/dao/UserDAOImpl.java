@@ -187,6 +187,31 @@ public class UserDAOImpl implements UserDAO {
 	    return "";
 	}
 
+	/* 이름 조회 */
+	@Override
+	public String findByName(String name) {
+		String sql = "SELECT id "
+	               + "FROM users "
+	               + "WHERE full_name = ?";
+
+	    try (var con = reservation.utils.DBUtil.getConnection();
+	         var ps = con.prepareStatement(sql)) {
+
+	        ps.setString(1, name);
+
+	        try (var rs = ps.executeQuery()) {
+	            if (rs.next()) {
+	                return rs.getString("id");
+	            }
+	        }
+
+	    } catch (Exception e) {
+	        System.err.println("이름 조회 시, 예외 발생!");
+	        e.printStackTrace();
+	    }
+	    return null;
+	}
+
 	
 	
 }

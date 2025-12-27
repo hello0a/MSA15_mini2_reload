@@ -12,12 +12,12 @@ import reservation.service.UserServiceImpl;
 
 import java.io.IOException;
 
-@WebServlet("/login")
-public class Login extends HttpServlet {
+@WebServlet("/user/login")
+public class UserLogin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
       
 	UserService userService = new UserServiceImpl();
-    public Login() {
+    public UserLogin() {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
@@ -44,7 +44,7 @@ public class Login extends HttpServlet {
 		
 		UserDTO result = userService.selectById(id, pw);
 		if (result == null) {
-			response.sendRedirect("/login");
+			response.sendRedirect("/user/login");
 			return;
 		} else {
 			HttpSession session = request.getSession();
@@ -52,8 +52,7 @@ public class Login extends HttpServlet {
 			session.setAttribute("pw", result.getPassword());
 		}
 		
-		String root = request.getContextPath();
-		response.sendRedirect("/main/main.html");
+		response.sendRedirect("/main/");
 	}
 
 }

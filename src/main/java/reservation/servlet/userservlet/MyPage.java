@@ -16,12 +16,14 @@ import java.io.IOException;
 public class MyPage extends HttpServlet {
 	private static final long serialVersionUID = 1L;
    
-	private UserService userService = new UserServiceImpl();
+	UserService userService = new UserServiceImpl();
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		// forward 방식 : 마이페이지 회원정보 페이지로 이동 (review.jsp)
 		String id = request.getParameter("id");
-		request.setAttribute("id", id);
+		UserDTO user = userService.getUser(id);
+		
+		request.setAttribute("user", user);
 		request.getRequestDispatcher("/mypage_user/main.jsp").forward(request, response);
 	}
 	

@@ -10,7 +10,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- css 코드 불러오기 -->
-<link rel="stylesheet" href="${pageContext.request.contextPath}/mypage_user/css/info.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/mypage_user/css/profile.css">
 	<title>마이페이지_회원용_회원정보</title>
 </head>
 
@@ -47,7 +47,7 @@
 						</div>
  -->					</div>
 				</div>
-				<a class="edit" href="/user/profile?id=${user.id}">회원정보 수정</a>
+				<a class="edit" href="/user/mypage/profile_edit?id=${user.id}">회원정보 수정</a>
 			</section>
 
 		</div>

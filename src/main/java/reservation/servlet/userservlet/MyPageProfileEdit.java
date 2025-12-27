@@ -12,8 +12,8 @@ import reservation.service.UserServiceImpl;
 
 import java.io.IOException;
 
-@WebServlet("/user/profile")
-public class MyProfile extends HttpServlet {
+@WebServlet("/user/mypage/profile_edit")
+public class MyPageProfileEdit extends HttpServlet {
 	private static final long serialVersionUID = 1L;
    
 	private UserService userService = new UserServiceImpl();

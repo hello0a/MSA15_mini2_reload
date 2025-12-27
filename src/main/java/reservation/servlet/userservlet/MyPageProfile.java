@@ -12,8 +12,8 @@ import reservation.service.UserServiceImpl;
 
 import java.io.IOException;
 
-@WebServlet("/user/mypage/info")
-public class MyPageUserInfo extends HttpServlet {
+@WebServlet("/user/mypage/profile")
+public class MyPageProfile extends HttpServlet {
 	private static final long serialVersionUID = 1L;
    
 	private UserService userService = new UserServiceImpl();
@@ -23,7 +23,7 @@ public class MyPageUserInfo extends HttpServlet {
 		String id = request.getParameter("id");
 		UserDTO user = userService.getUser(id);
 		request.setAttribute("user", user);
-		request.getRequestDispatcher("/mypage_user/info.jsp").forward(request, response);
+		request.getRequestDispatcher("/mypage_user/profile.jsp").forward(request, response);
 	}
 	
 }

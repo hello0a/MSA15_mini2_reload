@@ -7,7 +7,7 @@ import reservation.dto.UserDTO;
 public class UserServiceImpl implements UserService {
 
 	private UserDAO userDao = new UserDAOImpl();
-	
+	// 로그인
 	@Override
 	public UserDTO selectById(String id, String pw) {
 		// 1. 회원가입 된 아이디 확인
@@ -22,12 +22,12 @@ public class UserServiceImpl implements UserService {
 		}
 		return userDto;
 	}
-	
+	// 아이디찾기
 	@Override
 	public String findByNameAndEmail(String name, String email) {		
 		return userDao.findByNameAndEmail(name, email);
 	}
-	
+	// 회원가입
 	@Override
 	public int signup(UserDTO user) {
 		// 1. 회원가입 내용 필수항목
@@ -48,22 +48,31 @@ public class UserServiceImpl implements UserService {
 		return userDao.signup(user);
 //		return 0;
 	}
-
+	
+	// 마이페이지 회원 정보 조회
 	@Override
-	public UserDTO getUser(String mypageUser) {
+	public UserDTO getUser(String profile) {
 		// TODO Auto-generated method stub
-		if (mypageUser==null || mypageUser.isEmpty()) {
+		if (profile==null || profile.isEmpty()) {
 			return null;
 		}
-		UserDTO userDto = userDao.selectById(mypageUser);
+		UserDTO userDto = userDao.selectById(profile);
 		return userDto;
 	}
-
+	
+	// 마이페이지 회원 정보 수정
 	@Override
 	public int mypageupdate(UserDTO user) {
 		// TODO Auto-generated method stub
 		return userDao.mypageupdate(user);
 	}
+	
+	@Override
+	public String findByName(String name) {
+		// TODO Auto-generated method stub
+		return userDao.findByName(name);
+	}
+	
 
 	
 }
