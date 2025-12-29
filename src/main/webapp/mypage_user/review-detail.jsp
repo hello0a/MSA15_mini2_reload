@@ -10,18 +10,19 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- css 코드 불러오기 -->
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/layout/common.css">
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/mypage_user/css/review-detail.css">
 	<title>마이페이지_회원용_후기변경</title>
 </head>
 
 <body>
 	<header> 
-	
+		<jsp:include page="${pageContext.request.contextPath}/layout/header.jsp" />
 	</header>
-	<main>
+	<main class=review-detail-main>
 		<div class="inner">
 			<section class="left">
-				<jsp:include page="/mypage_user/main.jsp" />
+				<jsp:include page="${pageContext.request.contextPath}/mypage_user/mypage_menu.jsp" />
 			</section>
 			<section class="right">
 				<div class="container">
@@ -38,12 +39,12 @@
 					</div>
 					<textarea>고객 후기</textarea>
 				</div>
-				<button class="review-edit">수정하기</button>
+				<a class="review-edit" href="/user/mypage/review-edit?id=${designer.id}">수정하기</a>
 			</section>
 		</div>
 	</main>
 	<footer> 
-	
+		<jsp:include page="${pageContext.request.contextPath}/layout/footer.jsp" />
 	</footer>
 	
 </body>

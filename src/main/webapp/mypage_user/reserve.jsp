@@ -14,11 +14,13 @@
 	<title>마이페이지_회원용_예약조회</title>
 </head>
 <body>
-	<header> </header>
-	<main>
+	<header>
+		<jsp:include page="${pageContext.request.contextPath}/layout/header.jsp" />
+	</header>
+	<main class="reserve-main">
 		<div class="inner">
 			<section class="left">
-				<jsp:include page="/mypage_user/main.jsp" />
+				<jsp:include page="${pageContext.request.contextPath}/mypage_user/mypage_menu.jsp" />
 			</section>
 			<section class="right">
 				<div class="reserve">
@@ -39,11 +41,11 @@
 						</div>
 					</div>
 				</div>
-				<a class="reserve-edit">예약 변경</a>
+				<a class="reserve-edit" href="/mypage_user/reserve.css>예약 변경</a>
 			</section>
 		</div>
 	</main>
 	<footer> 
-	
+		<jsp:include page="${pageContext.request.contextPath}/layout/footer.jsp" />
 	</footer>
 </body>

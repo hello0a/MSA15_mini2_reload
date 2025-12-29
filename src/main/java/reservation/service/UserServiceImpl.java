@@ -1,66 +1,65 @@
 package reservation.service;
 
 import reservation.dao.UserDAO;
-import reservation.dao.UserDAOImpl;
 import reservation.dto.UserDTO;
+import reservation.utils.PasswordUilts;
 
 public class UserServiceImpl implements UserService {
 
-	private UserDAO userDao = new UserDAOImpl();
-	// ·Î±×ÀÎ
+	private UserDAO userDao = new UserDAO();
+	// ï¿½Î±ï¿½ï¿½ï¿½
 	@Override
-	public UserDTO selectById(String id, String pw) {
-		// 1. È¸¿ø°¡ÀÔ µÈ ¾ÆÀÌµğ È®ÀÎ
-		UserDTO userDto = userDao.selectById(id);
-		if(userDto == null) {
+	public UserDTO login (UserDTO userDto) {
+		// 1. È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½Ìµï¿½ È®ï¿½ï¿½
+		String username = userDto.getId();
+		UserDTO selectedUser = userDao.select(username);
+		
+		if(selectedUser == null) {
 			return null;
 		}
 		
-		// 2. ºñ¹Ğ¹øÈ£ ÀÏÄ¡ ¿©ºÎ È®ÀÎ
-		if (!pw.equals(userDto.getPassword())) {
+		String loginPassword = userDto.getPassword();
+		String password= selectedUser.getPassword();
+		
+		boolean check = PasswordUilts.check(loginPassword, password);
+		
+		if(!check)
 			return null;
-		}
-		return userDto;
+		
+		return selectedUser;
 	}
-	// ¾ÆÀÌµğÃ£±â
+	// ï¿½ï¿½ï¿½Ìµï¿½Ã£ï¿½ï¿½
 	@Override
 	public String findByNameAndEmail(String name, String email) {		
 		return userDao.findByNameAndEmail(name, email);
 	}
-	// È¸¿ø°¡ÀÔ
+	// È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	@Override
 	public int signup(UserDTO user) {
-		// 1. È¸¿ø°¡ÀÔ ³»¿ë ÇÊ¼öÇ×¸ñ
-		if ( user == null ) return 0;
 		
-//		if (user.getId() == null || user.getId().isEmpty()) {
-//			return 0;
-//		}
-//		if (user.getPassword() == null || user.getPassword().isEmpty()) {
-//			return 0;
-//		}
-//		if (user.getEmail() == null || user.getEmail().isEmpty()) {
-//			return 0;
-//		}
-		// 2. ÈŞ´ëÀüÈ­¹øÈ£ ±æÀÌ
+		String encodedPassword = PasswordUilts.encoded(user.getPassword());
+		user.setPassword(encodedPassword);
 		
-		
-		return userDao.signup(user);
-//		return 0;
+		// íšŒì›ì •ë³´ ë“±ë¡ ìš”ì²­
+		int result = userDao.signup(user);
+		if( result > 0 ) System.out.println("íšŒì› ê°€ì… ì„±ê³µ!");
+		else			 System.out.println("íšŒì› ê°€ì… ì‹¤íŒ¨!");
+		return result;
+
 	}
 	
-	// ¸¶ÀÌÆäÀÌÁö È¸¿ø Á¤º¸ Á¶È¸
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¸
 	@Override
 	public UserDTO getUser(String profile) {
 		// TODO Auto-generated method stub
 		if (profile==null || profile.isEmpty()) {
 			return null;
 		}
-		UserDTO userDto = userDao.selectById(profile);
+		UserDTO userDto = userDao.select(profile);
 		return userDto;
 	}
 	
-	// ¸¶ÀÌÆäÀÌÁö È¸¿ø Á¤º¸ ¼öÁ¤
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	@Override
 	public int mypageupdate(UserDTO user) {
 		// TODO Auto-generated method stub

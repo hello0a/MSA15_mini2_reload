@@ -77,7 +77,26 @@ main {
 	gap: 20px;
 }
 
-.login-link {
+.user-mypage {
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	color: #555;
+	font-size: 15px;
+	font-weight: 600;
+	transition: color 0.2s;
+}
+
+.designer-mypage {
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	color: #555;
+	font-size: 15px;
+	font-weight: 600;
+	transition: color 0.2s;
+}
+.logout{
 	display: flex;
 	align-items: center;
 	text-decoration: none;

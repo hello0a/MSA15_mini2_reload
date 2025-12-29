@@ -1,4 +1,4 @@
-package reservation.servlet.userservlet;
+package reservation.servlet;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -7,23 +7,19 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-/**
- * Servlet implementation class Main
- */
-@WebServlet("/main/")
-public class Main extends HttpServlet {
+
+@WebServlet("/signup")
+public class SignupMain extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    public Main() {
+    public SignupMain() {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		request.getRequestDispatcher("/main/main_test.jsp").forward(request, response);
+		request.getRequestDispatcher("/signup/signupmain_test.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

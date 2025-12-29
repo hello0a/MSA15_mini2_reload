@@ -7,19 +7,23 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-
-@WebServlet("/login")
-public class LoginMain extends HttpServlet {
+/**
+ * Servlet implementation class Main
+ */
+@WebServlet("/main/")
+public class Main extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    public LoginMain() {
+    public Main() {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("/login/loginmain_test.jsp").forward(request, response);
+		// TODO Auto-generated method stub
+		request.getRequestDispatcher("/main/main_test.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

@@ -4,7 +4,7 @@
 	padding: 0;
 	box-sizing: border-box;
 }
-
+ 
 .user-profile-main {
 	display: flex;
 	max-width: 1000px;
@@ -16,7 +16,7 @@
 	margin:auto;
 	gap: 2.5rem;
 	padding: 2rem 2rem;
-}
+} 
 
 .inner {
 	width: 970px;
@@ -30,32 +30,32 @@
 }
 
 .left {
-	width: 315px;
-	max-width: 100%;
+	flex: 1;
 }
 
 .right {
 	display: inline-flex;
-	width: 555px;
 	max-width: 100%;
 	justify-content: center;
-	gap: 3rem;
 	flex-direction: column;
+	flex: 2;
+	align-items: center;
 }
 
 .info {
 	display: inline-flex;
-	width: 100%;
 	gap: 1.5rem;
+	align-items: center;
+    flex-direction: row;
 }
 
 .label-wrap {
 	display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1rem;
     flex: 1;
     height: 510px;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
 .label-wrap label {
@@ -63,6 +63,8 @@
 	border-radius: 0.3rem;
 	text-align: center;
 	padding: 0.3rem;
+	width: 190px;
+    height: 35px;
 }
 
 .p-wrap {
@@ -70,13 +72,15 @@
 	text-align: center;
 	display: flex;
 	flex-direction: column;
-	gap: 0.5rem;
+	gap: 1rem;
 }
 
 .p-wrap p {
 	padding: 0.25rem;
 	border: 1px solid gainsboro;
 	border-radius: 0.3rem;
+	    width: 250px;
+    height: 35px;
 }
 
 .button-wrap {
@@ -93,11 +97,43 @@
 }
 
 .edit {
-	margin: auto;
-	width: 120px;
-	height: 40px;
-	text-align: center;
-	align-content: center;
-	background: gainsboro;
-	border-radius: 0.3rem;
+	width: 150px;
+	height: 55px;
+	border-radius: 0.5rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 20px;
+    background: gainsboro;
+    color: black;
+    text-decoration: none;
+}
+
+.edit:hover{
+  background: #357bd8;
+  border-color: #474747;
+  box-shadow: 0 4px 12px rgba(0,0,0,.08);
+  transform: translateY(-1px);
+}
+
+input {
+	
+    border: none;
+    background: none;
+    text-align: center;
+    font-size: 17px;
+    font-weight: 400;
+}
+input:focus {
+    border: none;
+    outline: none;  /* 클릭했을 때도 테두리 없음 */
+}
+.input-color {
+	background: white;
+}
+
+form {
+	display: flex;
+    flex-direction: column;
+    align-items: center;
 }

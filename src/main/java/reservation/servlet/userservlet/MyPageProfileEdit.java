@@ -19,7 +19,7 @@ public class MyPageProfileEdit extends HttpServlet {
 	private UserService userService = new UserServiceImpl();
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
-		// forward ¹æ½Ä : ¸¶ÀÌÆäÀÌÁö È¸¿øÁ¤º¸ ÆäÀÌÁö·Î ÀÌµ¿ (review.jsp)
+		// forward ï¿½ï¿½ï¿½ : ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ (review.jsp)
 		String id = request.getParameter("id");
 		UserDTO user = userService.getUser(id);
 //		request.getRequestDispatcher("/info.jsp").forward(request, response);		
@@ -50,7 +50,7 @@ public class MyPageProfileEdit extends HttpServlet {
 				.nationality("")
 				.build();
 
-		// È¸¿ø ¾÷µ¥ÀÌÆ®.
+		// È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®.
 		int result = userService.mypageupdate(userDto);
 		if (result>0) {
 			
@@ -59,9 +59,9 @@ public class MyPageProfileEdit extends HttpServlet {
 		}
 	
 		String root = request.getContextPath();
-		response.sendRedirect(root + "/user/mypage/info?id=" + id);
+		response.sendRedirect(root + "/user/mypage/profile?id=" + id);
 		
-		// ¾÷µ¥ÀÌÆ® ÈÄ º¯°æµÈ Á¤º¸.
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
 //		UserDTO user = userService.getUser(id);
 //		request.setAttribute("user", user);
 //		request.getRequestDispatcher("/mypage_user/info.jsp").forward(request, response);

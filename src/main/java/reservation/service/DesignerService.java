@@ -1,20 +1,22 @@
 package reservation.service;
 
 import reservation.dto.DesignerDTO;
+import reservation.dto.UserDTO;
 
 public interface DesignerService {
-	// ·Î±×ÀÎ : ÀÔ·Â (id) -> Ãâ·Â (UserDTO or null)
-		DesignerDTO selectById(String id, String pw);
+	
+		DesignerDTO login(DesignerDTO designer);
 			
-		// È¸¿ø°¡ÀÔ : ÀÔ·Â(UserDTO) -> Ãâ·Â (¼º°ø ¼ö or boolean)
+		// È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ : ï¿½Ô·ï¿½(UserDTO) -> ï¿½ï¿½ï¿½ (ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ or boolean)
 		int signup(DesignerDTO designer);
 		
-		// ¸¶ÀÌÆäÀÌÁö È¸¿ø Á¤º¸ ¼öÁ¤ : ÀÔ·Â(UserDTO) -> Ãâ·Â(¼º°ø ¼ö)
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ : ï¿½Ô·ï¿½(UserDTO) -> ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½)
 		int mypageupdate(DesignerDTO designerprofile);
 		
-		// ¾ÆÀÌµð Ã£±â : ÀÌ¸§, ÀÌ¸ÞÀÏ
+		// ï¿½ï¿½ï¿½Ìµï¿½ Ã£ï¿½ï¿½ : ï¿½Ì¸ï¿½, ï¿½Ì¸ï¿½ï¿½ï¿½
 		String findByNameAndEmail(String name, String email);
 		
-		// È¸¿ø Á¤º¸ Á¶È¸
+		// È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¸
 		DesignerDTO getDesigner(String profile);
+
 }

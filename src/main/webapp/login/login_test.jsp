@@ -14,7 +14,7 @@
 </head>
 
 <body>
-	<form action="/login" method="post">
+	<form action="/user/login" method="post">
 	<div class="login-wrap">
 		<!-- ë¡ê³  -->
 		<div class="logo">
@@ -39,7 +39,7 @@
 
 			<button type="submit" class="login-btn">로그인</button>
 			<div class="login-links">
-				<a href="/id_find">아이디 찾기</a> | <a href="/user/signup">회원가입 1</a>
+				<a href="/id_find">아이디 찾기</a> | <a href="/user/signup">회원가입</a>
 			</div>
 		</div>
 	</div>

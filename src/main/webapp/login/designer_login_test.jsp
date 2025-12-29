@@ -16,7 +16,6 @@
 <body>
 	<form action="/designer/login" method="post">
 	<div class="login-wrap">
-		<!-- ë¡ê³  -->
 		<div class="logo">
 			<img src="" alt="로고">
 		</div>
@@ -39,7 +38,7 @@
 
 			<button type="submit" class="login-btn">로그인</button>
 			<div class="login-links">
-				<a href="/designer/id_find">아이디 찾기</a> | <a href="/designer/signup">회원가입 1</a>
+				<a href="/designer/id_find">아이디 찾기</a> | <a href="/designer/signup">회원가입</a>
 			</div>
 		</div>
 	</div>

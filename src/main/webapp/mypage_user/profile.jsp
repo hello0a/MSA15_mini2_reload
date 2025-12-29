@@ -11,9 +11,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- css 코드 불러오기 -->
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/layout/common.css">
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/mypage_user/css/main.css">
-<%-- 	<link rel="stylesheet" href="${pageContext.request.contextPath}/mypage_user/css/mypage_menu.css">
- --%>	<link rel="stylesheet" href="${pageContext.request.contextPath}/mypage_user/css/profile.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/mypage_user/css/profile.css">
 	<title>마이페이지_회원용_회원정보</title>
 </head>
 
@@ -22,8 +20,8 @@
 		<jsp:include page="${pageContext.request.contextPath}/layout/header.jsp" />
 	</header>
 	<main class="user-profile-main">
-			<section class="left mypage-main">
-				<jsp:include page="/mypage_user/mypage_menu.jsp" />
+			<section class="left">
+				<jsp:include page="${pageContext.request.contextPath}/mypage_user/mypage_menu.jsp" />
 			</section>
 			<section class="right">
 				<div class="info">
@@ -38,13 +36,13 @@
 					</div>
 
 					<div class="p-wrap">
-						<p>test01</p>
-						<p>12345</p>
-						<p>홍길동</p>
-						<p>2025-12-28</p>
-						<p>test01@test.com</p>
-						<p>010-1234-5678</p>
-						<p>M</p>
+						<p>${user.id }</p>
+						<p><input id="password" name="password" value="${user.password }" /></p>
+						<p><input id="name" name="name" value="${user.full_name }" /></p>
+						<p><input id="birth" name="birth" value="${user.birth }" /></p>
+						<p><input id="email" name="email" value="${user.email }" /></p>
+						<p><input id="phonenumber" name="phonenumber" value="${user.phonenumber }" /></p>
+						<p><input id="gender" name="gender" value="${user.gender }" /></p>
 					</div>
 
 <%-- 						<p>${user.id }</p>

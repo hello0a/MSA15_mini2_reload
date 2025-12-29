@@ -10,20 +10,22 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- css 코드 불러오기 -->
-<link rel="stylesheet" href="${pageContext.request.contextPath}/mypage_user/css/info.css">
+	
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/layout/common.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/mypage_user/css/profile.css">
 	<title>마이페이지_회원용_회원정보</title>
 </head>
 
 <body>
-	<header> </header>
-	<main>
-		<div class="inner">
+	<header> 
+		<jsp:include page="${pageContext.request.contextPath}/layout/header.jsp" />
+	</header>
+	<main class="user-profile-main">
 			<section class="left">
-				<jsp:include page="/mypage_user/main.jsp" />
+				<jsp:include page="${pageContext.request.contextPath}/mypage_user/mypage_menu.jsp" />
 			</section>
 			<section class="right">
-				<form action="/user/profile" method="post">
-				<input type="hidden" id="id" name="id" value="${user.id }" />
+			<form action="/user/mypage/profile_edit" method="post">
 				<div class="info">
 					<div class="label-wrap">
 						<label class="id">아이디</label> 
@@ -35,25 +37,28 @@
 						<label class="sex">성별</label>
 					</div>
 
+					
 					<div class="p-wrap">
 						<p>${user.id }</p>
-						<p><input id="password" name="password" value="${user.password }" /></p>
-						<p><input id="name" name="name" value="${user.full_name }" /></p>
-						<p><input id="birth" name="birth" value="${user.birth }" /></p>
-						<p><input id="email" name="email" value="${user.email }" /></p>
-						<p><input id="phonenumber" name="phonenumber" value="${user.phonenumber }" /></p>
-						<p><input id="gender" name="gender" value="${user.gender }" /></p>
+						<p class="input-color"><input  id="password" name="password" value="${user.password }" /></p>
+						<p class="input-color"><input  id="name" name="name" value="${user.full_name }" /></p>
+						<p class="input-color"><input  id="birth" name="birth" value="${user.birth }" /></p>
+						<p class="input-color"><input  id="email" name="email" value="${user.email }" /></p>
+						<p class="input-color"><input  id="phonenumber" name="phonenumber" value="${user.phonenumber }" /></p>
+						<p class="input-color"><input id="gender" name="gender" value="${user.gender }" /></p>
 <!-- 						<div class="button-wrap">
 							<button>남</button>
 							<button>여</button>
 						</div>
- -->					</div>
+ -->				</div>
 				</div>
-				<button class="edit" type="submit">회원정보 저장</button>
-				</form>
+				<button class="edit" type="submit">수정 완료</button>
+			</form>
 			</section>
 
 		</div>
 	</main>
-	<footer> </footer>
+	<footer>
+		<jsp:include page="${pageContext.request.contextPath}/layout/footer.jsp" />
+	 </footer>
 </body>

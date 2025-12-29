@@ -1,56 +1,69 @@
 package reservation.service;
 
 import reservation.dao.DesignerDAO;
-import reservation.dao.DesignerDAOImple;
 import reservation.dto.DesignerDTO;
+import reservation.dto.UserDTO;
+import reservation.utils.PasswordUilts;
 
 public class DesignerServiceImpl implements DesignerService{
 
-	private DesignerDAO designerDao = new DesignerDAOImple();
-	// ·Î±×ÀÎ
+	private DesignerDAO designerDao = new DesignerDAO();
+	// ï¿½Î±ï¿½ï¿½ï¿½
 	@Override
-	public DesignerDTO selectById(String id, String pw) {
-		// 1. È¸¿ø°¡ÀÔ ¾ÆÀÌµğ È®ÀÎ
-		DesignerDTO designerDto = designerDao.selectById(id);
-		if(designerDto == null) {
-			return  null;
-		}
-		// 2. ºñ¹Ğ¹øÈ£ ÀÏÄ¡ ¿©ºÎ È®ÀÎ
-		if(!pw.equals(designerDto.getPassword())) {
+	public DesignerDTO login (DesignerDTO designerDto) {
+		// 1. È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìµï¿½ È®ï¿½ï¿½
+		String designername = designerDto.getId();
+		DesignerDTO selectedDesigner = designerDao.select(designername);
+		
+		if(selectedDesigner == null) {
 			return null;
 		}
-		return designerDto;
+		
+		String loginPassword = designerDto.getPassword();
+		String password= selectedDesigner.getPassword();
+		
+		boolean check = PasswordUilts.check(loginPassword, password);
+		
+		if(!check)
+			return null;
+		
+		return selectedDesigner;
 	}
 
-	// È¸¿ø°¡ÀÔ
+	// È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	@Override
 	public int signup(DesignerDTO designer) {
-		// 1. È¸¿ø°¡ÀÔ ³»¿ë ÇÊ¼ö Ç×¸ñ
-		if (designer == null) return 0;
+		// 1. È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¼ï¿½ ï¿½×¸ï¿½
+		String encodedPassword = PasswordUilts.encoded(designer.getPassword());
+		designer.setPassword(encodedPassword);
 		
-		return designerDao.signup(designer);
+		// íšŒì›ì •ë³´ ë“±ë¡ ìš”ì²­
+		int result = designerDao.signup(designer);
+		if( result > 0 ) System.out.println("íšŒì› ê°€ì… ì„±ê³µ!");
+		else			 System.out.println("íšŒì› ê°€ì… ì‹¤íŒ¨!");
+		return result;
 	}
 
-	// È¸¿ø Á¤º¸ Á¶È¸
+	// È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¸
 	@Override
 	public int mypageupdate(DesignerDTO designerProfile) {
 		return designerDao.mypageupdate(designerProfile);
 	}
 
-	// ¾ÆÀÌµğ Ã£±â
+	// ï¿½ï¿½ï¿½Ìµï¿½ Ã£ï¿½ï¿½
 	@Override
 	public String findByNameAndEmail(String name, String email) {
 		return designerDao.findByNameAndEmail(name, email);
 	}
 
-	// ¸¶ÀÌÆäÀÌÁö È¸¿ø Á¤º¸ Á¶È¸
+	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¸
 	@Override
 	public DesignerDTO getDesigner(String profile) {
 		// TODO Auto-generated method stub
 		if (profile==null || profile.isEmpty())	{
 			return null;
 		}
-		DesignerDTO designerDto = designerDao.selectById(profile);
+		DesignerDTO designerDto = designerDao.select(profile);
 		return designerDto;
 	}
 	

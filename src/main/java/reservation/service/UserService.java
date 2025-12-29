@@ -3,17 +3,17 @@ package reservation.service;
 import reservation.dto.UserDTO;
 
 public interface UserService {
-	// ·Î±×ÀÎ
-	UserDTO selectById(String id, String pw);
-	// ¾ÆÀÌµğÃ£±â
+	// ë¡œê·¸ì¸
+	UserDTO login(UserDTO user);
+	// 
 	String findByNameAndEmail(String name, String email);
-	// ÀÌ¸§ Á¶È¸
+	// 
 	String findByName(String name);
-	// È¸¿ø°¡ÀÔ
+	// íšŒì›ê°€ì…
 	int signup(UserDTO user);
-	// ¸¶ÀÌÆäÀÌÁö È¸¿ø Á¤º¸ Á¶È¸
+	// 
 	UserDTO getUser(String profile);
-	// ¸¶ÀÌÆäÀÌÁö È¸¿ø Á¤º¸ ¼öÁ¤
+	// 
 	int mypageupdate(UserDTO mypageUser);
 	
 }
