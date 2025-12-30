@@ -41,7 +41,7 @@
 						</div>
 					</div>
 				</div>
-				<a class="reserve-edit" href="/mypage_user/reserve.css>예약 변경</a>
+				<a class="reserve-edit" href="/mypage_user/reserve.css">예약 변경</a>
 			</section>
 		</div>
 	</main>

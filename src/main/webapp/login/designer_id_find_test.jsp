@@ -20,7 +20,7 @@
 		<!-- 이름 -->
 		<form action="/designer/id_find" method="post">
 		<div class="input-box">
-			<label>이름</label> 
+			<label>이름</label>
 			<input type="text" id="name" name="name" placeholder="이름을 입력하세요">
 		</div>
 
@@ -43,7 +43,7 @@
 
 		<!-- 하단 링크 -->
 		<div class="bottom-links">
-			<a href="/designer/login">로그인</a> |<a href="/designer/signup">회원가입</a>
+			<a href="/designer/login">로그인</a> | <a href="/designer/signup">회원가입</a>
 		</div>
 	</div>
 </body>

@@ -18,7 +18,7 @@
 	<div class="login-wrap">
 		<!-- ë¡ê³  -->
 		<div class="logo">
-			<img src="" alt="로고">
+			<span class="logo-icon">✂️</span>
 		</div>
 		<div class="login-container">
 			<h1>로그인</h1>

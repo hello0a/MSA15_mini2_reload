@@ -19,7 +19,7 @@ public class MyPage extends HttpServlet {
 	UserService userService = new UserServiceImpl();
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
-		// forward ¹æ½Ä : ¸¶ÀÌÆäÀÌÁö È¸¿øÁ¤º¸ ÆäÀÌÁö·Î ÀÌµ¿ (review.jsp)
+		// forward ï¿½ï¿½ï¿½ : ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ (review.jsp)
 		String id = request.getParameter("id");
 		UserDTO user = userService.getUser(id);
 		

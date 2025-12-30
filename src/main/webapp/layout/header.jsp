@@ -16,18 +16,21 @@
 					boolean isLogin = (user != null || designer != null);
 				%>
 				<!-- 로그인 링크 -->
-				<a href="/login" class="login-link"> <span class="login-icon">👤</span>
-					<% if (user != null) { %>
-						<a href="/user/mypage" class="user-mypage">
-						<span class="login-text"><%= user.getFull_name() %></span></a>
-					<% } else if (designer != null) { %>
-						<a href="/designer/mypage" class="designer-mypage">
-						<span class="login-text"><%= designer.getFull_name() %></span></a>
-					<% } else { %>
-						<a href="/login" class="logn-main">
-						<span class="login-text">로그인</span></a>
-					<% } %>
-					</a> 
+				
+				<% if (user != null) { %>
+					<a href="/user/mypage" class="user-mypage">
+					<span class="login-icon">👤</span>
+					<span class="login-text"><%= user.getFull_name() %></span></a>
+				<% } else if (designer != null) { %>
+					<a href="/designer/mypage" class="designer-mypage">
+					<span class="login-icon">👤</span>
+					<span class="login-text"><%= designer.getFull_name() %></span></a>
+				<% } else { %>
+					<a href="/login" class="logn-main">
+					<span class="login-icon">👤</span>
+					<span class="login-text">로그인</span></a>
+				<% } %>
+			
 				<% if (!isLogin) { %>
 					<p class="menu-divider">|</p>
 				<!-- <a href="/designer/mypage" class="login-link"> <span class="login-icon">👤</span>

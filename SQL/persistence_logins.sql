@@ -9,4 +9,4 @@ CREATE TABLE `persistence_logins` (
 	`updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '수정일자' );
 	
 -- 조회
-SELECT * FROM persistence_logins
+SELECT * FROM persistence_logins;

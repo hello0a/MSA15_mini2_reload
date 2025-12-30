@@ -18,10 +18,10 @@
 		<h1 class="title">회원가입</h1>
 
 		<div class="card-wrap">
-			<a href="/designer/signup" class="login-card owner"> <img src="img/owner.jpg" alt="매장용 회원가입">
+			<a href="/designer/signup" class="login-card owner"> <img src="/login/img/owner.jpg" alt="매장용 회원가입">
 				<h2>매장용 회원가입</h2>
 				<p>미용실 직원 전용</p>
-			</a> <a href="/user/signup" class="login-card user"> <img src="img/user.jpg" alt="회원용 회원가입">
+			</a> <a href="/user/signup" class="login-card user"> <img src="/login/img/user.jpg" alt="회원용 회원가입">
 				<h2>회원용 회원가입</h2>
 				<p>일반 고객 전용</p>
 			</a>

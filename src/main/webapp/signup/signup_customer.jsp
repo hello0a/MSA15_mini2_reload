@@ -68,7 +68,7 @@
 				});
 			});
 		</script>
-		<jsp:include page="include/footer.jsp" />
+		<jsp:include page="${pageContext.request.contextPath}/layout/footer.jsp" />
 	</body>
 
 	</html>

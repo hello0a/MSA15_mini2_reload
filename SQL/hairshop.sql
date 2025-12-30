@@ -3,7 +3,8 @@ DROP DATABASE IF EXISTS hairshop;
 CREATE DATABASE IF NOT EXISTS hairshop;
 USE hairshop;
 
-DELETE FROM users ;
+DELETE FROM designer;
+
 
 
 

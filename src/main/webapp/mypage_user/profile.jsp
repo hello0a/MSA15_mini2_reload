@@ -1,3 +1,4 @@
+<%@page import="reservation.dto.UserDTO"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
@@ -35,9 +36,10 @@
 						<label class="sex">성별</label>
 					</div>
 
+					
 					<div class="p-wrap">
 						<p>${user.id }</p>
-						<p><input id="password" name="password" value="${user.password }" /></p>
+						<p><input id="password" name="password" value="비밀번호" /></p>
 						<p><input id="name" name="name" value="${user.full_name }" /></p>
 						<p><input id="birth" name="birth" value="${user.birth }" /></p>
 						<p><input id="email" name="email" value="${user.email }" /></p>

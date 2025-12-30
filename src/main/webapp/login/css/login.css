@@ -32,6 +32,10 @@ body {
 	margin-bottom: 25px;
 }
 
+.logo .logo-icon {
+	font-size: 30px;
+}
+
 /* 입력창 */
 .input-box {
 	margin-bottom: 15px;

@@ -79,6 +79,7 @@ public class DesignerLogin extends HttpServlet {
 		} else {
 		
 			HttpSession session = request.getSession();
+			session.setAttribute("designer", result);
 			session.setAttribute("id", result.getId());
 			session.setAttribute("pw", result.getPassword());
 		}

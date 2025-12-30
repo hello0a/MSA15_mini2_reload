@@ -17,10 +17,10 @@
 	<form action="/designer/login" method="post">
 	<div class="login-wrap">
 		<div class="logo">
-			<img src="" alt="로고">
+			<span class="logo-icon">✂️</span>
 		</div>
 		<div class="login-container">
-			<h1>로그인</h1>
+			<h1>매장용 로그인</h1>
 			<div class="input-box">
 				<label for="id">아이디</label> 
 				<input type="text" id="id" name="id" placeholder="아이디 입력" value="${user.id}">

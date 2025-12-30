@@ -12,26 +12,27 @@ import reservation.service.DesignerServiceImpl;
 import java.io.IOException;
 import java.sql.Date;
 
-@WebServlet("/designer/profile/edit")
+@WebServlet("/designer/profile_edit")
 public class DesignerProfileEdit extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     
 	DesignerService designerService = new DesignerServiceImpl();
-	
-    public DesignerProfileEdit() {
-        
-    }
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
 		String id = request.getParameter("id");
-		DesignerDTO designerDto = designerService.getDesigner(id);
-		request.setAttribute("designer", designerDto);
+		DesignerDTO designer = designerService.getDesigner(id);
+		System.out.println("디자이너 - 회원정보수정");
+		System.out.println(designer);
+		request.setAttribute("designer", designer);
 		request.getRequestDispatcher("/mypage_designer/profile_edit.jsp").forward(request, response);
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
+		
 		String id = request.getParameter("id");
-		String pw = request.getParameter("pw");
+		String password = request.getParameter("password");
 		String name = request.getParameter("name");
 		String birthStr = request.getParameter("birth");
 		java.sql.Date birth = java.sql.Date.valueOf(birthStr);
@@ -45,9 +46,9 @@ public class DesignerProfileEdit extends HttpServlet {
 		String district = request.getParameter("district");
 		String addrDetail = request.getParameter("addrDetail");		
 		
-		DesignerDTO designerDto = DesignerDTO.builder()
+		DesignerDTO designer = DesignerDTO.builder()
 				.id(id)
-				.password(pw)
+				.password(password)
 				.full_name(name)
 				.birth(birth)
 				.email(email)
@@ -61,9 +62,16 @@ public class DesignerProfileEdit extends HttpServlet {
 				.addr_detail(addrDetail)			
 				.build();
 		
-		int result = designerService.mypageupdate(designerDto);
+		int result = designerService.mypageupdate(designer);
+		
+		if (result>0) {
+			
+		} else {
+			
+		}
+		
 		String root = request.getContextPath();
-		response.sendRedirect(root + "/designer/profile");
+		response.sendRedirect(root + "/designer/profile?id=" +id);
 	}
 
 }

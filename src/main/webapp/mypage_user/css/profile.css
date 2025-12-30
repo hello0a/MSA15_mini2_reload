@@ -131,7 +131,9 @@ input:focus {
 .input-color {
 	background: white;
 }
-
+.input-fix {
+	background:gainsboro;
+}
 form {
 	display: flex;
     flex-direction: column;

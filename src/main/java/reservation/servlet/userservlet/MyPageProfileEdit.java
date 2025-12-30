@@ -39,7 +39,7 @@ public class MyPageProfileEdit extends HttpServlet {
 		String phonenumber = request.getParameter("phonenumber");
 		String gender = request.getParameter("gender");
 		
-		UserDTO userDto = UserDTO.builder()
+		UserDTO user = UserDTO.builder()
 				.id(id)
 				.password(password)
 				.email(email)
@@ -51,7 +51,7 @@ public class MyPageProfileEdit extends HttpServlet {
 				.build();
 
 		// ȸ�� ������Ʈ.
-		int result = userService.mypageupdate(userDto);
+		int result = userService.mypageupdate(user);
 		if (result>0) {
 			
 		} else {

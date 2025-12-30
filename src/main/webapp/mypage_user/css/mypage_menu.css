@@ -54,6 +54,8 @@
 	text-align: center;
 	width: 55%;
 	gap: 1rem;
+	
+    align-items: center;
 }
 
 .mypage-index a {

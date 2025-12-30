@@ -28,7 +28,7 @@
 			<section class="right">
 				<div class="designer-profile">
 					<img src="${pageContext.request.contextPath}/mypage_designer/img/dug.jpg" alt="디자이너 프로필 사진">
-					<p>매장명</p>
+					<p>${designer.shop_name }</p>
 				</div>
 				<div class="designer-area">
 					<div class="designer-info">
@@ -41,14 +41,14 @@
 							<label class="phone">전화번호</label> 
 							<label class="shopname">매장명</label> 
 							<label class="sex">성별</label>
-							<label class="sex">국적</label>
-							<label class="sex">사업자번호</label>
-							<label class="sex">위치</label>
+							<label class="nationaliy">국적</label>
+							<label class="biznum">사업자번호</label>
+							<label class="location">위치</label>
 						</div>
 	
 						<div class="p-wrap">
 							<p>${designer.id }</p>
-							<p>${designer.password }</p>
+							<p>비밀번호</p>
 							<p>${designer.full_name }</p>
 							<p>${designer.birth }</p>
 							<p>${designer.email }</p>
@@ -62,7 +62,7 @@
 							</div>
 						</div>
 					</div>
-				<a class="designer-profile-edit" href="/designer/profile/edit?id=${designer.id}">회원정보 수정</a>
+				<a class="designer-profile-edit" href="/designer/profile_edit?id=${designer.id}">회원정보 수정</a>
 				</div>
 			</section>
 
