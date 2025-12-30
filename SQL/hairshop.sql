@@ -84,6 +84,19 @@ CREATE TABLE `board` (
 	`created_at`	TIMESTAMP	NOT NULL	DEFAULT CURRENT_TIMESTAMP	COMMENT '등록일자',
 	`updated_at`	TIMESTAMP	NOT NULL	DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP	COMMENT '수정일자'
 );
+-- 답글 테이블 생성
+drop table if exists comment;
+
+
+CREATE TABLE `comment` (
+	`no`	INT	AUTO_INCREMENT primary key COMMENT 'PK',
+	`board_no` int not null UNIQUE comment '게시판번호 FK',
+	`designer_no`	INT	NOT NULL	COMMENT '작성자 FK',
+	`content` TEXT not null comment '답글 내용',
+	`created_at`	TIMESTAMP	NOT NULL	DEFAULT CURRENT_TIMESTAMP	COMMENT '작성일자 ',
+	`updated_at`	TIMESTAMP	NOT NULL	DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP	COMMENT '수정 일자'
+);
+
 
 
 

@@ -10,7 +10,7 @@
 	</head>
 	<body>
 	<header>
-	<jsp:include page="/layout/header.jsp" />
+<%-- 	<jsp:include page="/layout/header.jsp" /> --%>
 	</header>
 	<section class="write-wrap">
 	    <h1 class="title">게시글 작성</h1>

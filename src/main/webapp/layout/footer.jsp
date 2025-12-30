@@ -1,5 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/layout/common.css">
     <footer class="site-footer">
         <div class="footer-container">
             <div class="footer-info">

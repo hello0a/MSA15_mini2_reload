@@ -7,8 +7,8 @@ import java.sql.ResultSet;
 
 public class JDBConnection {
 
-    private static final String URL = "jdbc:mysql://localhost:3306/aloha?serverTimezone=Asia/Seoul&allowPublicKeyRetrieval=true&useSSL=false";
-    private static final String USER = "aloha";
+    private static final String URL = "jdbc:mysql://localhost:3306/hairshop?serverTimezone=Asia/Seoul&allowPublicKeyRetrieval=true&useSSL=false";
+    private static final String USER = "hairshop";
     private static final String PASSWORD = "123456";
 
     static {
