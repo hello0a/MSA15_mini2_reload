@@ -65,22 +65,8 @@ textarea {
 	resize: none;
 }
 
-.btn-area {
-	display: flex;
-	align-items: center;
-	gap: 20px;
-}
 
-.btn {
-	margin-left: auto;
-}
 
-button {
-	margin-left: 10px;
-	background-color: lightgray;
-	border: solid gray 2px;
-	border-radius: 8px;
-}
 
 input[readonly],
 select:disabled {
@@ -88,6 +74,37 @@ select:disabled {
 	color: #666;
 }
 
-.btn:hover {
-	background-color: #357bd8;
+/* 버튼 영역 */
+.btn-area {
+    display: flex !important;
+    justify-content: flex-end !important; /* 오른쪽 정렬 강제 */
+    gap: 12px;
+    margin-top: 20px;
 }
+
+
+/* 버튼 공통 */
+.btn {
+    padding: 8px 16px;        /* 버튼 크기 */
+    font-size: 15px;          /* 글씨 크기 */
+    border-radius: 8px;       /* 모서리 둥글게 */
+    text-decoration: none;
+    cursor: pointer;
+    background-color: royalblue;
+    color: #fff;
+    border: none;
+}
+
+/* 취소 버튼 */
+.btn-cancel {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.btn:hover {
+	background-color: #285bb5;
+}
+
+

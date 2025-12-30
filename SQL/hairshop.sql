@@ -3,8 +3,7 @@ DROP DATABASE IF EXISTS hairshop;
 CREATE DATABASE IF NOT EXISTS hairshop;
 USE hairshop;
 
-DELETE FROM designer;
-
+DELETE FROM users ;
 
 
 
@@ -95,5 +94,3 @@ ALTER TABLE `review` ADD CONSTRAINT `FK_reserved_TO_review_1` FOREIGN KEY (
 REFERENCES `reserved` (
 	`no`
 );
-
-
