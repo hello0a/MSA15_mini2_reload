@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ include file="/layout/common.jsp" %>
 	<!DOCTYPE html>
 	<html lang="ko">
 
@@ -7,8 +8,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>회원가입(점주)</title>
 		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-		<link rel="stylesheet" href="${pageContext.request.contextPath}/layout/common.css">
-		<link rel="stylesheet" href="${pageContext.request.contextPath}/signup/css/signup_owner.css">
+		<link rel="stylesheet" href="${root}/layout/common.css">
+		<link rel="stylesheet" href="${root}/signup/css/signup_owner.css">
 	</head>
 
 	<body>
@@ -18,7 +19,7 @@
 			<div class="ownersignup">
 				<div class="title">회원가입(점주)</div>
 
-				<form id="ownerSignupForm" action="/designer/signup" method="post" onsubmit="return checkForm()">
+				<form id="ownerSignupForm" action="${root}/designer/signup" method="post" onsubmit="return checkForm()">
 					<div class="input-group">
 						<input type="text" name="id" placeholder="아이디 (영문+숫자 포함, 4~12자)" required>
 					</div>

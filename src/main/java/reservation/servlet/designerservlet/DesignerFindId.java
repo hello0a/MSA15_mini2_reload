@@ -37,7 +37,7 @@ public class DesignerFindId extends HttpServlet {
 		String email = request.getParameter("email");
 		
 		String id = designerService.findByNameAndEmail(name, email);
-		response.sendRedirect("/designer/id_find?id=" + id);
+		response.sendRedirect(request.getContextPath() + "/designer/id_find?id=" + id);
 	}
 
 }

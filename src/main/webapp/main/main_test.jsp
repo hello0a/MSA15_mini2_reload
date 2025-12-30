@@ -2,6 +2,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ include file="/layout/common.jsp" %>
 <%@ page language="java" contentType="text/html;" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,8 +11,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>메인화면</title>
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/layout/common.css">
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/main/css/main.css">
+	<link rel="stylesheet" href="${root}/layout/common.css">
+	<link rel="stylesheet" href="${root}/main/css/main.css">
 </head>
 
 <body>

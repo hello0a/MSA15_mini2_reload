@@ -24,9 +24,9 @@
 	<main class=designer-profile-main>
 		<div class="inner">
 			<section class="left">
-				<jsp:include page="${root}/mypage_designer/side-left.jsp" />
+				<jsp:include page="/mypage_designer/side-left.jsp" />
 			</section>
-				<form id="designer-profile-edit" action="/designer/profile_edit" method="post">
+				<form id="designer-profile-edit" action="${root}/designer/profile_edit" method="post">
 			<section class="right">
 				<div class="designer-profile">
 					<img src="${root}/mypage_designer/img/dug.jpg" alt="디자이너 프로필 사진">

@@ -5,7 +5,7 @@
 	<header class="site-header">
 		<div class="header-container">
 			<!-- 로고 영역: 클릭 시 홈으로 이동 (임시로 index.jsp) -->
-			<a href="/main" class="logo-area"> <span class="logo-icon">✂️</span>
+			<a href="${root}/main" class="logo-area"> <span class="logo-icon">✂️</span>
 				<span class="site-title">망머샵 미용실</span>
 			</a>
 
@@ -19,11 +19,11 @@
 				<!-- 로그인 링크 -->
 				
 				<% if (user != null) { %>
-					<a href="/user/mypage" class="user-mypage">
+					<a href="${root}/user/mypage" class="user-mypage">
 					<span class="login-icon">👤</span>
 					<span class="login-text"><%= user.getFull_name() %></span></a>
 				<% } else if (designer != null) { %>
-					<a href="/designer/mypage" class="designer-mypage">
+					<a href="${root}/designer/mypage" class="designer-mypage">
 					<span class="login-icon">👤</span>
 					<span class="login-text"><%= designer.getFull_name() %></span></a>
 				<% } else { %>

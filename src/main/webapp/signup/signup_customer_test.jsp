@@ -2,6 +2,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ include file="/layout/common.jsp" %>
 <%@ page language="java" contentType="text/html;" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,8 +10,8 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-		<link rel="stylesheet" href="${pageContext.request.contextPath}/layout/common.css">
-		<link rel="stylesheet" href="${pageContext.request.contextPath}/signup/css/signup_customer.css">
+		<link rel="stylesheet" href="${root}/layout/common.css">
+		<link rel="stylesheet" href="${root}/signup/css/signup_customer.css">
 		<title>회원가입</title>
 	</head>
 
@@ -20,7 +21,7 @@
 			<div class="wrapper">
 				<div class="title">회원가입</div>
 
-				<form id="signupForm" action="/user/signup" method="post" onsubmit="return checkForm()">
+				<form id="signupForm" action="${root}/user/signup" method="post" onsubmit="return checkForm()">
 					<div class="input-group">
 						<input type="text" name = "id" maxlength="12" placeholder="아이디 (영문+숫자 포함, 4~12자)" required>
 					</div>
@@ -128,7 +129,7 @@
 				}
 			}
 		</script>
-		<jsp:include page="${pageContext.request.contextPath}/layout/footer.jsp"/>
+		<jsp:include page="/layout/footer.jsp"/>
 	</body>
 
 	</html>

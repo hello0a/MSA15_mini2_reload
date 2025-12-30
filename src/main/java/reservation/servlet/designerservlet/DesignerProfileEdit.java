@@ -70,8 +70,7 @@ public class DesignerProfileEdit extends HttpServlet {
 			
 		}
 		
-		String root = request.getContextPath();
-		response.sendRedirect(root + "/designer/profile?id=" +id);
+		response.sendRedirect(request.getContextPath() + "/designer/profile?id=" +id);
 	}
 
 }

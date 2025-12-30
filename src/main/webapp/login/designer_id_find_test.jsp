@@ -19,7 +19,7 @@
 		<h1 class="title">아이디 찾기</h1>
 
 		<!-- 이름 -->
-		<form action="/designer/id_find" method="post">
+		<form action="${root}/designer/id_find" method="post">
 		<div class="input-box">
 			<label>이름</label>
 			<input type="text" id="name" name="name" placeholder="이름을 입력하세요">

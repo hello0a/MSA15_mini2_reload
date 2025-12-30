@@ -2,14 +2,15 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ include file="/layout/common.jsp" %>
 <%@ page language="java" contentType="text/html;" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/layout/common.css">
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/mypage_designer/css/side-left.css">
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/mypage_designer/css/reserve_detail.css">
+	<link rel="stylesheet" href="${root}/layout/common.css">
+	<link rel="stylesheet" href="${root}/mypage_designer/css/side-left.css">
+	<link rel="stylesheet" href="${root}/mypage_designer/css/reserve_detail.css">
 	<title>예약 상세 정보</title>
 </head>
 <body>
@@ -19,11 +20,11 @@
 	<main class="reserve_detail_main">
 		<div class="inner">
 			<section class="left">
-				<jsp:include page="${pageContext.request.contextPath}/mypage_designer/side-left.jsp" />
+				<jsp:include page="${root}/mypage_designer/side-left.jsp" />
 			</section>
 			<section class="right">
 				<div class="designer-profile">
-					<img src="${pageContext.request.contextPath}/mypage_user/img/profile.png" alt="회원 프로필 사진">
+					<img src="${root}/mypage_user/img/profile.png" alt="회원 프로필 사진">
 					<p>${user.full_name}</p>
 				</div>
 				<div class="reserve-area">
@@ -50,7 +51,7 @@
 							<textarea name="spec" rows="5">특이사항</textarea>
 						</div>
 					</div>
-					<a class="reserve-edit" href="/designer/mypage/reserve-edit?id=${user.id}">특이사항 변경</a>
+					<a class="reserve-edit" href="${root}/designer/mypage/reserve-edit?id=${user.id}">특이사항 변경</a>
 				</div>
 			</section>
 		</div>

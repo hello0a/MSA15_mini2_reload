@@ -113,7 +113,7 @@ public class DesignerLogin extends HttpServlet {
 			rememberMeCookie.setPath("/");
 			response.addCookie(rememberMeCookie);
 		}
-		response.sendRedirect("/main/?id=" + id);
+		response.sendRedirect(request.getContextPath() + "/main/?id=" + id);
 		
 	}
 

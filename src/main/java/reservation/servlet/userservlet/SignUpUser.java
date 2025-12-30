@@ -59,9 +59,9 @@ public class SignUpUser extends HttpServlet {
 		int result = userService.signup(users);
 		String root = request.getContextPath();
 		if (result == 0) {
-			response.sendRedirect("/user/signup");
+			response.sendRedirect(request.getContextPath() + "/user/signup");
 		} else {
-			response.sendRedirect("/main/");
+			response.sendRedirect(request.getContextPath() + "/main/");
 		}
 	}
 

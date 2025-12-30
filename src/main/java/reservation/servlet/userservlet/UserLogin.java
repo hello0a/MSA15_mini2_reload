@@ -1,6 +1,7 @@
 package reservation.servlet.userservlet;
 
 import jakarta.servlet.ServletException;
+
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
@@ -35,10 +36,7 @@ public class UserLogin extends HttpServlet {
 				break;
 			}
 		}
-		
-
 		request.getRequestDispatcher("/login/login_test.jsp").forward(request, response);
-		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
@@ -110,7 +108,7 @@ public class UserLogin extends HttpServlet {
 			rememberMeCookie.setPath("/");
 			response.addCookie(rememberMeCookie);
 		}
-		response.sendRedirect("/main/?id=" + id);
+		response.sendRedirect(request.getContextPath() + "/main/?id=" + id);
 		
 	}
 

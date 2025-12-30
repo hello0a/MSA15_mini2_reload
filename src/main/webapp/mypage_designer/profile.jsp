@@ -24,11 +24,11 @@
 	<main class=designer-profile-main>
 		<div class="inner">
 			<section class="left">
-				<jsp:include page="${pageContext.request.contextPath}/mypage_designer/side-left.jsp" />
+				<jsp:include page="/mypage_designer/side-left.jsp" />
 			</section>
 			<section class="right">
 				<div class="designer-profile">
-					<img src="${pageContext.request.contextPath}/mypage_designer/img/dug.jpg" alt="디자이너 프로필 사진">
+					<img src="${root}/mypage_designer/img/dug.jpg" alt="디자이너 프로필 사진">
 					<p>${designer.shop_name }</p>
 				</div>
 				<div class="designer-area">
@@ -63,7 +63,7 @@
 							</div>
 						</div>
 					</div>
-				<a class="designer-profile-edit" href="/designer/profile_edit?id=${designer.id}">회원정보 수정</a>
+				<a class="designer-profile-edit" href="${root}/designer/profile_edit?id=${designer.id}">회원정보 수정</a>
 				</div>
 			</section>
 

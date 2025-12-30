@@ -71,9 +71,9 @@ public class DesignerSignUp extends HttpServlet {
 		
 		int result = designerService.signup(designerDto);
 		if (result == 0) {
-			response.sendRedirect("/designer/signup");
+			response.sendRedirect(request.getContextPath() + "/designer/signup");
 		} else {
-			response.sendRedirect("/main/");
+			response.sendRedirect(request.getContextPath() + "/main/");
 		}
 	}
 

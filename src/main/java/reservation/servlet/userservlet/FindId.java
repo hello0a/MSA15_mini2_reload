@@ -32,7 +32,7 @@ public class FindId extends HttpServlet {
 		String email = request.getParameter("email");
 		
 		String id = userService.findByNameAndEmail(name, email);
-		response.sendRedirect("/id_find?id=" + id);
+		response.sendRedirect(request.getContextPath() + "/id_find?id=" + id);
 	}
 
 }

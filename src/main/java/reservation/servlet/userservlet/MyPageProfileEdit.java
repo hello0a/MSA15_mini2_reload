@@ -58,8 +58,7 @@ public class MyPageProfileEdit extends HttpServlet {
 			
 		}
 	
-		String root = request.getContextPath();
-		response.sendRedirect(root + "/user/mypage/profile?id=" + id);
+		response.sendRedirect(request.getContextPath() + "/user/mypage/profile?id=" + id);
 		
 		// ������Ʈ �� ����� ����.
 //		UserDTO user = userService.getUser(id);

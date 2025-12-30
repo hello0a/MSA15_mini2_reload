@@ -1,4 +1,5 @@
-	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>	
+	<%@ include file="/layout/common.jsp" %>
 	<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 	<link rel="stylesheet" href="common.css">
 	<!DOCTYPE html>
@@ -6,16 +7,17 @@
 	<head>
 	    <meta charset="UTF-8">
 	    <title>게시글 작성</title>
-	    <link rel="stylesheet" href="${pageContext.request.contextPath}/board/css/boardcreate.css">
+	    <link rel="stylesheet" href="${root}/layout/common.css">
+	    <link rel="stylesheet" href="${root}/board/css/boardcreate.css">
 	</head>
 	<body>
 	<header>
-<%-- 	<jsp:include page="/layout/header.jsp" /> --%>
+	 	<jsp:include page="/layout/header.jsp" />
 	</header>
 	<section class="write-wrap">
 	    <h1 class="title">게시글 작성</h1>
 	
-	    <form action="${pageContext.request.contextPath}/board/create" method="post">
+	    <form action="${root}/board/create" method="post">
 	        <div class="form-row">
 	            <label>매장 선택</label>
 	  <select name="designerNo" id="designerNo" required>
@@ -41,7 +43,7 @@
 	        <div class="btn-area">
 	            <button type="submit" class="btn btn-write">등록하기</button>
 	            <button type="button" class="btn btn-cancel" 
-	                    onclick="location.href='${pageContext.request.contextPath}/board/list'">
+	                    onclick="location.href='${root}/board/list'">
 	                취소
 	            </button>
 	        </div>

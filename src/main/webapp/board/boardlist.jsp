@@ -1,23 +1,25 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ include file="/layout/common.jsp" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <title>보드 게시판</title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/board/css/boardlist.css">
+	<link rel="stylesheet" href="${root}/layout/common.css">
+    <link rel="stylesheet" href="${root}/board/css/boardlist.css">
 </head>
 <body>
 <header>
-<%-- <jsp:include page="/layout/header.jsp" /> --%>
+	<jsp:include page="/layout/header.jsp" /> 
 </header>
 <section>
 
     <h1 class="title">C/S 고객문의 게시판</h1>
 
     <!-- 드롭다운 필터 -->
-    <form id="shopForm" action="${pageContext.request.contextPath}/board/list" method="get">
+    <form id="shopForm" action="${root}/board/list" method="get">
         <label class="name" for="storeSelect">매장을 선택하세요 : </label>
         <select class="name2" id="storeSelect" name="storeSelect" onchange="document.getElementById('shopForm').submit()">
             <option value="">전체</option>
@@ -66,7 +68,7 @@
     <tr>
         <td>${board.no}</td>
         <td>
-            <a href="${pageContext.request.contextPath}/board/read?no=${board.no}">
+            <a href="${root}/board/read?no=${board.no}">
                 ${board.title}
             </a>
         </td>
@@ -87,7 +89,7 @@
 
         <!-- 문의하기 버튼 -->
         <div class="btn-area">
-            <button type="button" class="btn" onclick="location.href='${pageContext.request.contextPath}/board/create'">문의하기</button>
+            <button type="button" class="btn" onclick="location.href='${root}/board/create'">문의하기</button>
         </div>
     </div>
 </section>

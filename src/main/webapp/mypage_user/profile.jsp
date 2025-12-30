@@ -4,6 +4,7 @@
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ include file="/layout/common.jsp" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,8 +12,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- css 코드 불러오기 -->
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/layout/common.css">
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/mypage_user/css/profile.css">
+	<link rel="stylesheet" href="${root}/layout/common.css">
+	<link rel="stylesheet" href="${root}/mypage_user/css/profile.css">
 	<title>마이페이지_회원용_회원정보</title>
 </head>
 
@@ -22,7 +23,7 @@
 	</header>
 	<main class="user-profile-main">
 			<section class="left">
-				<jsp:include page="${pageContext.request.contextPath}/mypage_user/mypage_menu.jsp" />
+				<jsp:include page="/mypage_user/mypage_menu.jsp" />
 			</section>
 			<section class="right">
 				<div class="info">
@@ -60,7 +61,7 @@
 						</div>
  -->
 				</div>
-				<a class="edit" href="/user/mypage/profile_edit?id=${user.id}">회원정보 수정</a>
+				<a class="edit" href="${root}/user/mypage/profile_edit?id=${user.id}">회원정보 수정</a>
 			</section>
 	</main>
 	<footer>
