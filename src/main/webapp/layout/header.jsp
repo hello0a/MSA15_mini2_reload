@@ -1,3 +1,4 @@
+<%@ include file="/layout/common.jsp" %>
 <%@page import="reservation.dto.DesignerDTO"%>
 <%@page import="reservation.dto.UserDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -26,7 +27,7 @@
 					<span class="login-icon">👤</span>
 					<span class="login-text"><%= designer.getFull_name() %></span></a>
 				<% } else { %>
-					<a href="/login" class="logn-main">
+					<a href="${root}/login" class="logn-main">
 					<span class="login-icon">👤</span>
 					<span class="login-text">로그인</span></a>
 				<% } %>
@@ -37,12 +38,12 @@
 					<span class="login-text">너다</span> 
 				</a> <span class="menu-divider">|</span> -->
 				<!-- 회원가입 링크 -->
-					<a href="/signup" class="login-link"> <span class="signup-text">회원가입</span></a>
+					<a href="${root}/signup" class="login-link"> <span class="signup-text">회원가입</span></a>
 				<% } %>
 				
 				<% if (isLogin) { %>
 				    <span class="menu-divider">|</span>
-				    <a href="/logout" class="logout">
+				    <a href="${root}/logout" class="logout">
 				        <span class="logout-text">로그아웃</span>
 				    </a>
 				<% } %>

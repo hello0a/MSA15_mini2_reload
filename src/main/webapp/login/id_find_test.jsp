@@ -2,6 +2,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ include file="/layout/common.jsp" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -9,7 +10,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/login/css/id_find.css">
+	<link rel="stylesheet" href="${root}/login/css/id_find.css">
 	<title>아이디 찾기</title>
 </head>
 
@@ -18,7 +19,7 @@
 		<h1 class="title">아이디 찾기</h1>
 
 		<!-- 이름 -->
-		<form action="/id_find" method="post">
+		<form action="${root}/id_find" method="post">
 		<div class="input-box">
 			<label>이름</label> 
 			<input type="text" id="name" name="name" placeholder="이름을 입력하세요">
@@ -43,7 +44,7 @@
 
 		<!-- 하단 링크 -->
 		<div class="bottom-links">
-			<a href="/login">로그인</a> |<a href="/user/signup">회원가입</a>
+			<a href="${root}/login">로그인</a> |<a href="${root}/user/signup">회원가입</a>
 		</div>
 	</div>
 </body>

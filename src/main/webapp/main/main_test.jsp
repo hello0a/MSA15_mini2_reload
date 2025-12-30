@@ -16,7 +16,7 @@
 
 <body>
 	<header>
-		<jsp:include page="${pageContext.request.contextPath}/layout/header.jsp" />
+		<jsp:include page="/layout/header.jsp" />
 	</header>
 	<div class=containerbox>
 		<section class="sec1">
@@ -42,7 +42,7 @@
 		</section>
 	</div>
 <footer>
-		<jsp:include page="${pageContext.request.contextPath}/layout/footer.jsp" />
+		<jsp:include page="/layout/footer.jsp" />
 </footer>
 
 </body>

@@ -12,7 +12,7 @@
 	</head>
 
 	<body>
-		<jsp:include page="${pageContext.request.contextPath}/layout/header.jsp" />
+		<jsp:include page="/layout/header.jsp" />
 
 		<main class="signup-main">
 			<div class="ownersignup">
@@ -138,7 +138,7 @@
 		}
 		</script>
 
-		<jsp:include page="${pageContext.request.contextPath}/layout/footer.jsp" />
+		<jsp:include page="/layout/footer.jsp" />
 	</body>
 
 	</html>

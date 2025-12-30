@@ -15,7 +15,7 @@
 	</head>
 
 	<body>
-		<jsp:include page="${pageContext.request.contextPath}/layout/header.jsp" />
+		<jsp:include page="/layout/header.jsp" />
 		<main class="signup-main">
 			<div class="wrapper">
 				<div class="title">회원가입</div>

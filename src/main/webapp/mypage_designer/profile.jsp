@@ -2,6 +2,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ include file="/layout/common.jsp" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,15 +11,15 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- css 코드 불러오기 -->
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/layout/common.css">
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/mypage_designer/css/side-left.css">
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/mypage_designer/css/profile.css">
+	<link rel="stylesheet" href="${root}/layout/common.css">
+	<link rel="stylesheet" href="${root}/mypage_designer/css/side-left.css">
+	<link rel="stylesheet" href="${root}/mypage_designer/css/profile.css">
 	<title>마이페이지_디자이너용_회원정보</title>
 </head>
 
 <body>
 	<header>
-		<jsp:include page="${pageContext.request.contextPath}/layout/header.jsp" />
+		<jsp:include page="/layout/header.jsp" />
 	</header>
 	<main class=designer-profile-main>
 		<div class="inner">
@@ -69,6 +70,6 @@
 		</div>
 	</main>
 	<footer>
-		<jsp:include page="${pageContext.request.contextPath}/layout/footer.jsp" />
+		<jsp:include page="/layout/footer.jsp" />
 	</footer>
 </body>

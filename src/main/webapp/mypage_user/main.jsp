@@ -17,7 +17,7 @@
 
 <body>
 	<header>
-		<jsp:include page="${pageContext.request.contextPath}/layout/header.jsp" />
+		<jsp:include page="/layout/header.jsp" />
 	</header>
 	
 	<main>
@@ -25,7 +25,7 @@
 	</main>
 	
 	<footer>
-		<jsp:include page="${pageContext.request.contextPath}/layout/footer.jsp" />
+		<jsp:include page="/layout/footer.jsp" />
 	</footer>
 </body>
 

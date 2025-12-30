@@ -2,6 +2,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ include file="/layout/common.jsp" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,25 +11,25 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- css 코드 불러오기 -->
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/layout/common.css">
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/mypage_designer/css/side-left.css">
-	<link rel="stylesheet" href="${pageContext.request.contextPath}/mypage_designer/css/profile.css">
+	<link rel="stylesheet" href="${root}/layout/common.css">
+	<link rel="stylesheet" href="${root}/mypage_designer/css/side-left.css">
+	<link rel="stylesheet" href="${root}/mypage_designer/css/profile.css">
 	<title>마이페이지_디자이너용_회원정보</title>
 </head>
 
 <body>
 	<header>
-		<jsp:include page="${pageContext.request.contextPath}/layout/header.jsp" />
+		<jsp:include page="/layout/header.jsp" />
 	</header>
 	<main class=designer-profile-main>
 		<div class="inner">
 			<section class="left">
-				<jsp:include page="${pageContext.request.contextPath}/mypage_designer/side-left.jsp" />
+				<jsp:include page="${root}/mypage_designer/side-left.jsp" />
 			</section>
 				<form id="designer-profile-edit" action="/designer/profile_edit" method="post">
 			<section class="right">
 				<div class="designer-profile">
-					<img src="${pageContext.request.contextPath}/mypage_designer/img/dug.jpg" alt="디자이너 프로필 사진">
+					<img src="${root}/mypage_designer/img/dug.jpg" alt="디자이너 프로필 사진">
 					<p>${designer.shop_name }</p>
 				</div>
 				<div class="designer-area">
@@ -65,7 +66,7 @@
 							<p><input id="addrDetail" name="addrDetail" value="${designer.addr_detail}" ></p>
 						</div>
 					</div>
-				<a class="designer-profile-edit" href="/designer/profile?id=${designer.id}">수정 완료</a>
+				<a class="designer-profile-edit" href="${root}/designer/profile?id=${designer.id}">수정 완료</a>
 				</div>
 			</section>
 		</form>
@@ -112,6 +113,6 @@
 		}
 		</script>
 	<footer>
-		<jsp:include page="${pageContext.request.contextPath}/layout/footer.jsp" />
+		<jsp:include page="/layout/footer.jsp" />
 	</footer>
 </body>
