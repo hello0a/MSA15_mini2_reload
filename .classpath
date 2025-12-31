@@ -7,6 +7,7 @@
             <attribute name="owner.project.facets" value="jst.web"/>
         </attributes>
     </classpathentry>
+
     <classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/jakarta.servlet.jsp.jstl-3.0.1.jar"/>
     <classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/jakarta.servlet.jsp.jstl-api-3.0.2.jar"/>
     <classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/jakarta.servlet-api-6.1.0.jar"/>

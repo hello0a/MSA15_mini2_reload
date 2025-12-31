@@ -5,6 +5,8 @@ USE hairshop;
 
 DELETE FROM users ;
 
+select * from users;
+
 
 
 -- 리뷰 테이블 생성
