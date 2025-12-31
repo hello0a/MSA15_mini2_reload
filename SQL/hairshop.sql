@@ -3,10 +3,10 @@ DROP DATABASE IF EXISTS hairshop;
 CREATE DATABASE IF NOT EXISTS hairshop;
 USE hairshop;
 
-DELETE FROM users ;
+DELETE FROM users;
 
 
-
+select * from users;
 -- 리뷰 테이블 생성
 CREATE TABLE `review` (
 	`no`			INT	NOT NULL AUTO_INCREMENT PRIMARY KEY	COMMENT 'PK',

@@ -69,7 +69,7 @@ public class UserLogin extends HttpServlet {
 		
 		if (result == null) {
 			// 다시 로그인 화면으로 이동
-			response.sendRedirect("/user/login");
+			response.sendRedirect(request.getContextPath() +"/user/login");
 			return;
 		} else {
 		

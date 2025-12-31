@@ -4,16 +4,16 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-/* Âü°í¿ë : DB ¿¬°áÀº DBUtil·Î */
+/* ï¿½ï¿½ï¿½ï¿½ï¿½ : DB ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ DBUtilï¿½ï¿½ */
 public class JDBConnection {
 
-	public Connection con;	// ¿¬°áµÈ µå¶óÀÌ¹ö¿¡ SQL ¿äÃ»ÇÒ °´Ã¼ »ý¼º
-	public PreparedStatement psmt;	// Statement ¿¡¼­ ? ÆÄ¶ó¹ÌÅÍ È®Àå ±â´É Ãß°¡·Î Á¦°ø
-	public ResultSet rs;	// SQL ½ÇÇà °á°ú ¹Þ¾Æ¿À±â
+	public Connection con;	// ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ì¹ï¿½ï¿½ï¿½ SQL ï¿½ï¿½Ã»ï¿½ï¿½ ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½
+	public PreparedStatement psmt;	// Statement ï¿½ï¿½ï¿½ï¿½ ? ï¿½Ä¶ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ß°ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+	public ResultSet rs;	// SQL ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Þ¾Æ¿ï¿½ï¿½ï¿½
 	
 	public JDBConnection() {
 		try {
-			// DB ¿¬°á
+			// DB ï¿½ï¿½ï¿½ï¿½
 			String url = "jdbc:mysql://localhost:3306/hairshop?serverTimezone=Asia/Seoul&allowPublicKeyRetrieval=true&useSSL=false";
 			String id = "hairshop";
 			String password = "123456";
@@ -22,15 +22,15 @@ public class JDBConnection {
 			
 			con = DriverManager.getConnection(url, id, password);
 			
-			System.out.println("DB ¿¬°á ¼º°ø!");
+			System.out.println("DB ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½!");
 					
 		} catch (Exception e) {
-			System.err.println("DB ¿¬°á ½ÇÆÐ!");
+			System.err.println("DB ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½!");
 			e.printStackTrace();
 		}	
 	}
 	
-	// ÅèÄ¹ ¸ØÃß±â Àü±îÁö DB ¿¬°á °è¼Ó À¯Áö
+	// ï¿½ï¿½Ä¹ ï¿½ï¿½ï¿½ß±ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ DB ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	public void close() {
 		try { if (rs != null) rs.close(); } catch (Exception e) {}
 		try { if (psmt != null) psmt.close(); } catch (Exception e) {}
